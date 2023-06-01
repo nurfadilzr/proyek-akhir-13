@@ -1,7 +1,5 @@
 package id.proyekakhir.financetrack;
 
-import java.awt.Font;
-
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -97,7 +95,7 @@ public class App extends Application{
         BackgroundFill bgFill = new BackgroundFill(Color.CORNSILK, CornerRadii.EMPTY, Insets.EMPTY);
         Background background = new Background(bgFill);
         vbox3.setBackground(background);
-        Scene scene = new Scene(new StackPane(vbox3), 300, 580);
+        Scene scene = new Scene(new StackPane(vbox3), 400, 600);
         return scene;
     }
 
