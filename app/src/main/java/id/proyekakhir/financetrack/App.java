@@ -206,7 +206,7 @@ public class App extends Application{
     }
 
     private Scene getScene6(){
-        Text artikel = new Text(50, 20, "Artikel");
+        Text artikel = new Text("Artikel");
         Button back = new Button("BACK");
 
         artikel.setFont(Font.font("Oswald", 24));
