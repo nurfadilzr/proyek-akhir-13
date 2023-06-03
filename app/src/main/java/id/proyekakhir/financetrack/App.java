@@ -185,7 +185,7 @@ public class App extends Application{
     }
 
     private Scene getScene5(){
-        Text lihat = new Text(50, 20, "Lihat Pengeluaran");
+        Text lihat = new Text("Lihat Pengeluaran");
         Button back = new Button("BACK");
 
         lihat.setFont(Font.font("Oswald", 24));
