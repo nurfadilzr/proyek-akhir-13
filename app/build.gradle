@@ -20,6 +20,7 @@ repositories {
 dependencies {
     // This dependency is used by the application.
     implementation 'com.google.guava:guava:31.1-jre'
+    implementation 'org.xerial:sqlite-jdbc:3.42.0.0'
 }
 
 application {
@@ -28,6 +29,6 @@ application {
 }
 
 javafx {
-    version = "20"
+    version = "17"
     modules = [ 'javafx.controls' ]
 }
