@@ -10,7 +10,6 @@ import javafx.scene.Cursor;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -44,11 +43,11 @@ public class App extends Application{
 
         logoApp.setFitWidth(250);
         logoApp.setFitHeight(250);
-        intro.setFont(Font.font("Anaktoria", FontWeight.MEDIUM, FontPosture.ITALIC, 18));
-        //intro.setStroke(Color.DARKOLIVEGREEN);
-        intro.setFill(Color.rgb(246,247,233));
+        intro.setFont(Font.font("Anaktoria", FontWeight.BOLD, FontPosture.ITALIC, 18));
+        intro.setFill(Color.rgb(60,86,68));
         start.setFont(Font.font("Quicksand", 14));
         start.setStyle("-fx-text-fill: black; -fx-background-color: silver;");
+        start.setStyle("-fx-background-radius: 300;");
         start.setCursor(Cursor.HAND);
 
         start.setOnAction(v -> {
@@ -68,7 +67,6 @@ public class App extends Application{
 
     private Scene getScene2(){
         Text hlmLogin = new Text("Halaman Login");
-        //hlmLogin.setTextAlignment(TextAlignment.CENTER);
         Button login = new Button("LOGIN");
         Button back = new Button("BACK");
         
@@ -113,9 +111,10 @@ public class App extends Application{
         vb2.setAlignment(Pos.CENTER);
         vb2.setSpacing(10);
 
-        VBox vbox = new VBox(vb, vb1, vb2);
-        vbox.setAlignment(Pos.CENTER);
-        vbox.setSpacing(20);
+        VBox vbox2 = new VBox(vb, vb1, vb2);
+        vbox2.setPadding(new Insets(20, 30, 20, 30));
+        vbox2.setAlignment(Pos.CENTER);
+        vbox2.setSpacing(20);
         
         // VBox vbox2 = new VBox(hlmLogin, username, txtUsername, password, txtPassword, login, back);
         // vbox2.setAlignment(Pos.CENTER_LEFT);
@@ -124,8 +123,8 @@ public class App extends Application{
         
         BackgroundFill bgFill = new BackgroundFill(Color.rgb(246,247,233), CornerRadii.EMPTY, Insets.EMPTY);
         Background background = new Background(bgFill);
-        vbox.setBackground(background);
-        Scene scene = new Scene(new StackPane(vbox), 400, 600);
+        vbox2.setBackground(background);
+        Scene scene = new Scene(new StackPane(vbox2), 400, 600);
         return scene;
     }
 
@@ -136,7 +135,7 @@ public class App extends Application{
         Button lihat = new Button("Lihat Pengeluaran");
         Button artikel = new Button("Artikel");
 
-        pilihMenu.setFont(Font.font("Times New Roman", 30));
+        pilihMenu.setFont(Font.font("Times New Roman", FontWeight.SEMI_BOLD, 30));
         catat.setStyle("-fx-font: 18 forum; -fx-text-fill: white;");
         catat.setBackground(Background.fill(Color.DIMGREY));
         catat.setCursor(Cursor.HAND);
@@ -176,7 +175,7 @@ public class App extends Application{
         Button simpan = new Button("SIMPAN");
         Button batal = new Button("BATAL");
 
-        catat.setFont(Font.font("Times New Roman", 24));
+        catat.setFont(Font.font("Times New Roman", FontWeight.SEMI_BOLD, 24));
         tgl.setFont(Font.font("Forum", FontPosture.ITALIC, 14));
         hal.setFont(Font.font("Forum", FontPosture.ITALIC, 14));
         jml.setFont(Font.font("Forum", FontPosture.ITALIC, 14));
@@ -210,6 +209,7 @@ public class App extends Application{
         vb2.setSpacing(10);
 
         VBox vbox4 = new VBox(vb, vb1, vb2);
+        vbox4.setPadding(new Insets(20, 30, 20, 30));
         vbox4.setAlignment(Pos.CENTER);
         vbox4.setSpacing(20);
         BackgroundFill bgFill = new BackgroundFill(Color.rgb(246,247,233), CornerRadii.EMPTY, Insets.EMPTY);
@@ -223,7 +223,7 @@ public class App extends Application{
         Text lihat = new Text("Lihat Pengeluaran");
         Button back = new Button("BACK");
 
-        lihat.setFont(Font.font("Times New Roman", 24));
+        lihat.setFont(Font.font("Times New Roman", FontWeight.SEMI_BOLD, 24));
         back.setCursor(Cursor.HAND);
 
         back.setOnAction(v -> {
@@ -231,6 +231,7 @@ public class App extends Application{
         });
 
         VBox vbox5 = new VBox(lihat, back);
+        vbox5.setPadding(new Insets(20, 30, 20, 30));
         vbox5.setAlignment(Pos.CENTER_LEFT);
         vbox5.setSpacing(20);
         BackgroundFill bgFill = new BackgroundFill(Color.rgb(246,247,233), CornerRadii.EMPTY, Insets.EMPTY);
@@ -268,7 +269,7 @@ public class App extends Application{
         //String[] isi = {"Perencanaan keuangan yang baik seringkali didukung dengan adanya pengetahuan keuangan yang baik pula. Pengetahuan keuangan atau financial literacy adalah pengetahuan individu mengenai konsep keuangan, prinsip-prinsip dan teknologi yang digunakan sebagai dasar pengelolaan keuangan yang memungkinkan individu dalam mengambil keputusan-keputusan keuangan."};
 
 
-        artikel.setFont(Font.font("Times New Roman", 24));
+        artikel.setFont(Font.font("Times New Roman", FontWeight.SEMI_BOLD, 24));
         back.setCursor(Cursor.HAND);
 
         back.setOnAction(v -> {
@@ -276,6 +277,7 @@ public class App extends Application{
         });
 
         VBox vbox6 = new VBox(artikel, isi, back);
+        vbox6.setPadding(new Insets(20, 30, 20, 30));
         vbox6.setAlignment(Pos.TOP_LEFT);
         vbox6.setSpacing(20);
         BackgroundFill bgFill = new BackgroundFill(Color.rgb(246,247,233), CornerRadii.EMPTY, Insets.EMPTY);
