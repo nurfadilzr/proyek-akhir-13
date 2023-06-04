@@ -73,9 +73,11 @@ public class App extends Application{
         hlmLogin.setFont(Font.font("Times New Roman", FontWeight.SEMI_BOLD, 26));
         login.setFont(Font.font("Quicksand", 12));
         login.setStyle("-fx-text-fill: black; -fx-background-color: silver;");
+        login.setStyle("-fx-background-radius: 200;");
         login.setCursor(Cursor.HAND);
         back.setFont(Font.font("Quicksand", 12));
         back.setStyle("-fx-text-fill: black; -fx-background-color: silver;");
+        back.setStyle("-fx-background-radius: 200;");
         back.setCursor(Cursor.HAND);
 
         Label username = new Label("Username");
@@ -185,9 +187,11 @@ public class App extends Application{
 
         simpan.setFont(Font.font("Quicksand", 12));
         simpan.setStyle("-fx-text-fill: black; -fx-background-color: silver;");
+        simpan.setStyle("-fx-background-radius: 200;");
         simpan.setCursor(Cursor.HAND);
         batal.setFont(Font.font("Quicksand", 12));
         batal.setStyle("-fx-text-fill: black; -fx-background-color: silver;");
+        batal.setStyle("-fx-background-radius: 200;");
         batal.setCursor(Cursor.HAND);
 
         simpan.setOnAction(v -> {
@@ -224,6 +228,7 @@ public class App extends Application{
         Button back = new Button("BACK");
 
         lihat.setFont(Font.font("Times New Roman", FontWeight.SEMI_BOLD, 24));
+        back.setStyle("-fx-background-radius: 200;");
         back.setCursor(Cursor.HAND);
 
         back.setOnAction(v -> {
@@ -270,6 +275,7 @@ public class App extends Application{
 
 
         artikel.setFont(Font.font("Times New Roman", FontWeight.SEMI_BOLD, 24));
+        back.setStyle("-fx-background-radius: 200;");
         back.setCursor(Cursor.HAND);
 
         back.setOnAction(v -> {
