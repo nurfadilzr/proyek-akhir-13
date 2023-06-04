@@ -77,7 +77,7 @@ public class App extends Application{
         login.setCursor(Cursor.HAND);
         back.setFont(Font.font("Quicksand", 12));
         back.setStyle("-fx-text-fill: black; -fx-background-color: silver;");
-        back.setStyle("-fx-background-radius: 200;");
+        back.setStyle("-fx-background-radius: 300;");
         back.setCursor(Cursor.HAND);
 
         Label username = new Label("Username");
@@ -136,6 +136,7 @@ public class App extends Application{
         Button catat = new Button("Catat Pengeluaran");
         Button lihat = new Button("Lihat Pengeluaran");
         Button artikel = new Button("Artikel");
+        Button logout = new Button("LOGOUT");
 
         pilihMenu.setFont(Font.font("Times New Roman", FontWeight.SEMI_BOLD, 30));
         catat.setStyle("-fx-font: 18 forum; -fx-text-fill: white;");
@@ -147,6 +148,10 @@ public class App extends Application{
         artikel.setStyle("-fx-font: 18 forum; -fx-text-fill: white;");
         artikel.setBackground(Background.fill(Color.DIMGREY));
         artikel.setCursor(Cursor.HAND);
+        logout.setFont(Font.font("Quicksand", 12));
+        logout.setStyle("-fx-text-fill: black; -fx-background-color: silver;");
+        logout.setStyle("-fx-background-radius: 200;");
+        logout.setCursor(Cursor.HAND);
 
         catat.setOnAction(v -> {
             stage.setScene(getScene4()); 
@@ -157,9 +162,12 @@ public class App extends Application{
         artikel.setOnAction(v -> {
             stage.setScene(getScene6()); 
         });
+        logout.setOnAction(v -> {
+            stage.setScene(getScene2()); 
+        });
 
 
-        VBox vbox3 = new VBox(pilihMenu, catat, lihat, artikel);
+        VBox vbox3 = new VBox(pilihMenu, catat, lihat, artikel, logout);
         vbox3.setAlignment(Pos.CENTER);
         vbox3.setSpacing(20);
         BackgroundFill bgFill = new BackgroundFill(Color.rgb(246,247,233), CornerRadii.EMPTY, Insets.EMPTY);
@@ -191,7 +199,7 @@ public class App extends Application{
         simpan.setCursor(Cursor.HAND);
         batal.setFont(Font.font("Quicksand", 12));
         batal.setStyle("-fx-text-fill: black; -fx-background-color: silver;");
-        batal.setStyle("-fx-background-radius: 200;");
+        batal.setStyle("-fx-background-radius: 300;");
         batal.setCursor(Cursor.HAND);
 
         simpan.setOnAction(v -> {
@@ -228,7 +236,7 @@ public class App extends Application{
         Button back = new Button("BACK");
 
         lihat.setFont(Font.font("Times New Roman", FontWeight.SEMI_BOLD, 24));
-        back.setStyle("-fx-background-radius: 200;");
+        back.setStyle("-fx-background-radius: 300;");
         back.setCursor(Cursor.HAND);
 
         back.setOnAction(v -> {
@@ -275,7 +283,7 @@ public class App extends Application{
 
 
         artikel.setFont(Font.font("Times New Roman", FontWeight.SEMI_BOLD, 24));
-        back.setStyle("-fx-background-radius: 200;");
+        back.setStyle("-fx-background-radius: 300;");
         back.setCursor(Cursor.HAND);
 
         back.setOnAction(v -> {
