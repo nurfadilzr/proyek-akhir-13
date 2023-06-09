@@ -12,6 +12,7 @@ public class SceneRegis {
     // Regular expression patterns for username and password validation
     private static final Pattern USERNAME_PATTERN = Pattern.compile("[a-zA-Z0-9]+");
     private static final Pattern PASSWORD_PATTERN = Pattern.compile("(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)[a-zA-Z\\d]{8,}");
+
     public Scene getRegis(Stage Stage) {
         Stage.setTitle("Registration Form");
 
@@ -36,6 +37,7 @@ public class SceneRegis {
         Button registerButton = new Button("Register");
         Button back = new Button("Back");
         gridPane.add(registerButton, 0, 2);
+        gridPane.add(back, 0, 3);
 
         // Register Button event handling
         registerButton.setOnAction(event -> {
@@ -47,7 +49,6 @@ public class SceneRegis {
                 showAlert("Username tidak valid. Username harus terdiri dari kombinasi huruf dan angka.");
                 return;
             }
-
             if (!validatePassword(password)) {
                 showAlert("Password tidak valid. Password harus memiliki setidaknya 8 karakter dan mengandung setidaknya satu huruf kecil, satu huruf besar, dan satu angka.");
                 return;
@@ -60,15 +61,13 @@ public class SceneRegis {
             else {
                 showAlert("tidak sukses");
             }
-
-            
         });
 
         back.setOnAction(event -> {
             Stage.setScene(Scene2.getScene2(Stage));
         });
 
-        Scene scene = new Scene(gridPane, 360, 660);
+        Scene scene = new Scene(gridPane, 450, 650);
         Stage.setScene(scene);
         return scene;
     }
@@ -90,5 +89,4 @@ public class SceneRegis {
         alert.setContentText(message);
         alert.showAndWait();
     }
-
 }

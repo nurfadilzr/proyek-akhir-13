@@ -21,8 +21,6 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 
-
-
 public class Scene2  {
     private static Scene scene;
 
@@ -32,13 +30,13 @@ public class Scene2  {
         Button back = new Button("BACK");
         
         hlmLogin.setFont(Font.font("Times New Roman", FontWeight.SEMI_BOLD, 26));
-        login.setFont(Font.font("Quicksand", 12));
+        login.setFont(Font.font("Quicksand", 14));
         login.setStyle("-fx-text-fill: black; -fx-background-color: white;");
-        login.setStyle("-fx-background-radius: 300;");
+        login.setStyle("-fx-background-radius: 100;");
         login.setCursor(Cursor.HAND);
-        back.setFont(Font.font("Quicksand", 12));
+        back.setFont(Font.font("Quicksand", 14));
         back.setStyle("-fx-text-fill: black; -fx-background-color: white;");
-        back.setStyle("-fx-background-radius: 300;");
+        back.setStyle("-fx-background-radius: 100;");
         back.setCursor(Cursor.HAND);
 
         Label user = new Label("Username");
@@ -52,7 +50,7 @@ public class Scene2  {
         txtPassword.setFont(Font.font("Forum", 14));
         
         Label output = new Label();
-        Hyperlink regis = new Hyperlink("buat Kata Sandi dan Pasword");
+        Hyperlink regis = new Hyperlink("Buat Kata Sandi dan Pasword");
 
         regis.setOnAction(v -> {
             SceneRegis regisScene = new SceneRegis();
@@ -100,7 +98,7 @@ public class Scene2  {
         BackgroundFill bgFill = new BackgroundFill(Color.rgb(246,247,233), CornerRadii.EMPTY, Insets.EMPTY);
         Background background = new Background(bgFill);
         vbox2.setBackground(background);
-        Scene scene = new Scene(new StackPane(vbox2), 400, 600);
+        Scene scene = new Scene(new StackPane(vbox2), 400, 650);
         return scene;
     }
 }

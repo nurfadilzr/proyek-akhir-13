@@ -28,9 +28,10 @@ public class Scene5 {
         Button back = new Button("BACK");
 
         tableView = new TableView<>();
-        DbConnect.fetchDataFromDatabase(tableView);
+        tableView = DbConnect.fetchDataFromDatabase(tableView);
         lihat.setFont(Font.font("Times New Roman", FontWeight.SEMI_BOLD, 24));
-        back.setStyle("-fx-background-radius: 300;");
+        back.setFont(Font.font("Times New Roman", 14));
+        back.setStyle("-fx-background-radius: 100;");
         back.setCursor(Cursor.HAND);
 
         back.setOnAction(v -> {
@@ -44,7 +45,7 @@ public class Scene5 {
         BackgroundFill bgFill = new BackgroundFill(Color.rgb(246,247,233), CornerRadii.EMPTY, Insets.EMPTY);
         Background background = new Background(bgFill);
         vbox5.setBackground(background);
-        Scene scene = new Scene(new StackPane(vbox5), 400, 600);
+        Scene scene = new Scene(new StackPane(vbox5), 400, 650);
         return scene;
     }
 }

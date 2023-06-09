@@ -51,14 +51,14 @@ public class Scene4 {
         // hal.setStyle("-fx-text-fill: grey;");
         // jml.setStyle("-fx-text-fill: grey;");
 
-        catat.setFont(Font.font("Times New Roman", FontWeight.SEMI_BOLD, 24));
-        simpan.setFont(Font.font("Quicksand", 12));
+        catat.setFont(Font.font("Times New Roman", FontWeight.SEMI_BOLD, 2));
+        simpan.setFont(Font.font("Quicksand", 14));
         simpan.setStyle("-fx-text-fill: black; -fx-background-color: silver;");
-        simpan.setStyle("-fx-background-radius: 300;");
+        simpan.setStyle("-fx-background-radius: 100;");
         simpan.setCursor(Cursor.HAND);
-        batal.setFont(Font.font("Quicksand", 12));
+        batal.setFont(Font.font("Times New Roman", 14));
         batal.setStyle("-fx-text-fill: black; -fx-background-color: silver;");
-        batal.setStyle("-fx-background-radius: 300;");
+        batal.setStyle("-fx-background-radius: 100;");
         batal.setCursor(Cursor.HAND);
 
         simpan.setOnAction(v -> {
@@ -67,7 +67,7 @@ public class Scene4 {
             int Saldo = Integer.parseInt(inputSaldo.getText());
             String keterangan = inputKeterangan.getText();
             DbConnect.connection();
-            Boolean uji = DbConnect.saveToDatabase(Pemasukkan, pengeluaran,keterangan);
+            Boolean uji = DbConnect.saveToDatabase(Pemasukkan, pengeluaran, keterangan);
             Boolean uji2 = DbConnect.saveToDatabase(Saldo);
             if (uji){
                 if (uji2){
@@ -99,6 +99,8 @@ public class Scene4 {
             Data.add(inputKeterangan, 1, 2);
             Data.add(textSaldo, 0, 3);
             Data.add(inputSaldo, 1, 3);
+            Data.add(simpan, 0, 4);
+            Data.add(batal, 1, 4);
         }
         else {
             Data.add(textPengeluaran, 0, 0);
@@ -107,33 +109,33 @@ public class Scene4 {
             Data.add(inputPemasukkan, 1, 1);
             Data.add(textKeterangan, 0, 2);
             Data.add(inputKeterangan, 1, 2);
+            Data.add(simpan, 0, 3);
+            Data.add(batal, 0, 4);
         }
     
         Data.setHgap(10); 
         Data.setVgap(10);
+        //Data.setStyle("-fx-font: 18 times new roman;");
         Data.setAlignment(Pos.CENTER);
 
 
-
         VBox root  = new VBox();
-        root.getChildren().addAll(catat, Data, simpan, batal);
+        root.getChildren().addAll(catat, Data);
         root.setAlignment(Pos.CENTER);
         root.setStyle(" -fx-spacing: 30px; -fx-alignment: center;");
         
-        
+        // VBox vb2 = new VBox(simpan,batal);
+        // vb2.setAlignment(Pos.CENTER_LEFT);
+        // vb2.setSpacing(10);
 
-        VBox vb2 = new VBox(simpan,batal);
-        vb2.setAlignment(Pos.CENTER_LEFT);
-        vb2.setSpacing(10);
-
-        VBox vbox4 = new VBox(root, vb2);
+        VBox vbox4 = new VBox(root);
         vbox4.setPadding(new Insets(20, 30, 20, 30));
         vbox4.setAlignment(Pos.CENTER);
         vbox4.setSpacing(20);
         BackgroundFill bgFill = new BackgroundFill(Color.rgb(246,247,233), CornerRadii.EMPTY, Insets.EMPTY);
         Background background = new Background(bgFill);
         vbox4.setBackground(background);
-        Scene scene = new Scene(new StackPane(vbox4), 400, 600);
+        Scene scene = new Scene(new StackPane(vbox4), 400, 650);
         return scene;
     }
     private static void showAlert(String message) {
@@ -167,8 +169,8 @@ public class Scene4 {
             statement.executeUpdate(createTableQuery);
 
             // Menambahkan baris baru
-            String insertRowQuery = "INSERT INTO transaksi (tanggal, pengeluaran, pemasukan, keterangan, saldo) " +
-                    "VALUES ('2023-06-02', 100.0, 0.0, 'Pembelian barang', 100.0)";
+            String insertRowQuery = "INSERT INTO transaksi (tanggal, pengeluaran, pemasukan, keterangan, saldo)" +
+                "VALUES ('2023-06-02', 100.0, 0.0, 'Pembelian barang', 100.0)";
             statement.executeUpdate(insertRowQuery);
 
             System.out.println("Database, tabel, dan baris berhasil dibuat.");

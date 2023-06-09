@@ -13,11 +13,12 @@ import javafx.beans.property.SimpleObjectProperty;
 import javafx.scene.control.TableColumn;
 
 public class DbConnect {
-    private static final String DB_URL = "jdbc:sqlite:db/dbUser.db";
+    private static final String DB_URL = "jdbc:sqlite:/db/dbUser.db";
     private static Connection connection;
     private static PreparedStatement preparedStatement;
     private static ResultSet resultSet;
     private static String quary;
+    
     public static void connection(){    
         try {
             connection = DriverManager.getConnection(DB_URL);
@@ -122,7 +123,7 @@ public class DbConnect {
         return uji;
     }
     
-    public static void fetchDataFromDatabase(TableView<Object[]> tableView) {
+    public static TableView<Object[]> fetchDataFromDatabase(TableView<Object[]> tableView) {
         try {
             // Mengatur koneksi ke database
             Connection connection = DriverManager.getConnection("jdbc:sqlite:/db/dbUser");
@@ -163,5 +164,6 @@ public class DbConnect {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        return tableView;
     }
 }

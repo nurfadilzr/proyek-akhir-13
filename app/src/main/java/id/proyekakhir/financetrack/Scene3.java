@@ -16,33 +16,34 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 
-
 public class Scene3 {
-
     public static Scene getScene3(Stage stage){
         Text pilihMenu = new Text("PILIH MENU");
         Button catat = new Button("Catat Pengeluaran");
         Button lihat = new Button("Lihat Pengeluaran");
-        Button artikel = new Button("Artikel");
+        Button artikel = new Button("Tips");
         Button logout = new Button("LOGOUT");
 
-        pilihMenu.setFont(Font.font("Times New Roman", FontWeight.SEMI_BOLD, 30));
-        catat.setStyle("-fx-font: 18 forum; -fx-text-fill: black;");
-        // catat.setBackground(Background.fill(Color.DIMGREY));
+        pilihMenu.setFont(Font.font("Times New Roman", FontWeight.BOLD, 30));
+        pilihMenu.setFill(Color.rgb(60,86,68));
+        catat.setFont(Font.font("Times New Roman", 22));
         catat.setStyle("-fx-background-color: white");
+        catat.setTextFill(Color.rgb(69,125,88));
         catat.setCursor(Cursor.HAND);
-        lihat.setStyle("-fx-font: 18 forum; -fx-text-fill: black;");
-        // lihat.setBackground(Background.fill(Color.DIMGREY));
-        catat.setStyle("-fx-background-color: white");
+        
+        lihat.setFont(Font.font("Times New Roman", 22));
+        lihat.setStyle("-fx-background-color: white");
+        lihat.setTextFill(Color.rgb(69,125,88));
         lihat.setCursor(Cursor.HAND);
-        artikel.setStyle("-fx-font: 18 forum; -fx-text-fill: black;");
-        // artikel.setBackground(Background.fill(Color.DIMGREY));
-        catat.setStyle("-fx-background-color: white");
+
+        artikel.setFont(Font.font("Times New Roman", 22));
+        artikel.setStyle("-fx-background-color: white");
+        artikel.setTextFill(Color.rgb(69,125,88));
         artikel.setCursor(Cursor.HAND);
 
-        logout.setFont(Font.font("Quicksand", 12));
+        logout.setFont(Font.font("Quicksand", 14));
         logout.setStyle("-fx-text-fill: white; -fx-background-color: silver;");
-        logout.setStyle("-fx-background-radius: 300;");
+        logout.setStyle("-fx-background-radius: 100;");
         logout.setCursor(Cursor.HAND);
 
         catat.setOnAction(v -> {
@@ -59,14 +60,17 @@ public class Scene3 {
             stage.setScene(Scene2.getScene2(stage)); 
         });
 
+        VBox vb = new VBox(pilihMenu, catat, lihat, artikel);
+        vb.setAlignment(Pos.CENTER);
+        vb.setSpacing(20);
 
-        VBox vbox3 = new VBox(pilihMenu, catat, lihat, artikel, logout);
+        VBox vbox3 = new VBox(vb, logout);
         vbox3.setAlignment(Pos.CENTER);
-        vbox3.setSpacing(20);
+        vbox3.setSpacing(40);
         BackgroundFill bgFill = new BackgroundFill(Color.rgb(246,247,233), CornerRadii.EMPTY, Insets.EMPTY);
         Background background = new Background(bgFill);
         vbox3.setBackground(background);
-        Scene scene = new Scene(new StackPane(vbox3), 400, 600);
+        Scene scene = new Scene(new StackPane(vbox3), 400, 650);
         return scene;
     }
 }

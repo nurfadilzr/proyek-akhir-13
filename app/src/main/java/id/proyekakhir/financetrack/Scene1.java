@@ -25,17 +25,16 @@ import javafx.scene.text.Text;
 public class Scene1{
 
     public static Scene getScene1(Stage stage) throws FileNotFoundException{
-        Image image1 = new Image(new FileInputStream("E:\\image1.jpeg"));   // PINDAHIN LOGO KE FOLDER INI
+        Image image1 = new Image(new FileInputStream("E:\\Proyek Akhir OOP\\app\\image1.jpeg"));   // PINDAHIN LOGO KE FOLDER INI
         ImageView logoApp = new ImageView(image1);
         Text intro = new Text("Let's Manage your Savings!");
         Button start = new Button("Start Now");
         
-
         logoApp.setFitWidth(250);
         logoApp.setFitHeight(250);
         intro.setFont(Font.font("Anaktoria", FontWeight.BOLD, FontPosture.ITALIC, 18));
         intro.setFill(Color.rgb(60,86,68));
-        start.setFont(Font.font("Quicksand", 14));
+        start.setFont(Font.font("Quicksand", 16));
         start.setStyle("-fx-text-fill: black; -fx-background-color: white;");
         start.setStyle("-fx-background-radius: 300;");
         start.setCursor(Cursor.HAND);
@@ -59,7 +58,7 @@ public class Scene1{
         BackgroundFill bgFill = new BackgroundFill(Color.rgb(246,247,233), null, null);
         Background background = new Background(bgFill);
         vbox1.setBackground(background);
-        Scene scene = new Scene(new StackPane(vbox1), 400, 600);
+        Scene scene = new Scene(new StackPane(vbox1), 400, 650);
         return scene;
     }
 }
