@@ -3,7 +3,7 @@ package id.proyekakhir.financetrack;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 
-import config.DbConnect;
+import id.proyekakhir.config.DbConnect;
 import javafx.geometry.Pos;
 import javafx.stage.Stage;
 import javafx.scene.Cursor;
@@ -22,9 +22,9 @@ import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 
 
-public class Scene1{
+public class SceneStart{
 
-    public static Scene getScene1(Stage stage) throws FileNotFoundException{
+    public static Scene getSceneStart(Stage stage) throws FileNotFoundException{
         Image image1 = new Image(new FileInputStream("E:\\Proyek Akhir OOP\\app\\image1.jpeg"));   // PINDAHIN LOGO KE FOLDER INI
         ImageView logoApp = new ImageView(image1);
         Text intro = new Text("Let's Manage your Savings!");
@@ -46,11 +46,10 @@ public class Scene1{
                 stage.setScene(scene1);
             }
             else {
-                stage.setScene(Scene2.getScene2(stage));
+                stage.setScene(SceneLogin.getSceneLogin(stage));
             }
         });
         
-
         VBox vbox1 = new VBox(logoApp, intro, start);
         vbox1.setSpacing(18);
         vbox1.setAlignment(Pos.CENTER);

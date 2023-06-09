@@ -5,7 +5,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import config.DbConnect;
+import id.proyekakhir.config.DbConnect;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
@@ -26,9 +26,9 @@ import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 
 
-public class Scene4 {
+public class SceneCatat {
     
-    public static Scene getScene4(Stage stage){
+    public static Scene getSceneCatat(Stage stage){
         Text catat = new Text("Catat Pengeluaran");
         Text textPengeluaran = new Text("Pengeluaran");
         Text textPemasukkan = new Text("Pemasukan");
@@ -42,14 +42,6 @@ public class Scene4 {
 
         Button simpan = new Button("SIMPAN");
         Button batal = new Button("BATAL");
-
-        // catat.setFont(Font.font("Times New Roman", FontWeight.SEMI_BOLD, 24));
-        // tgl.setFont(Font.font("Forum", FontPosture.ITALIC, 14));
-        // hal.setFont(Font.font("Forum", FontPosture.ITALIC, 14));
-        // jml.setFont(Font.font("Forum", FontPosture.ITALIC, 14));
-        // tgl.setStyle("-fx-text-fill: grey;");
-        // hal.setStyle("-fx-text-fill: grey;");
-        // jml.setStyle("-fx-text-fill: grey;");
 
         catat.setFont(Font.font("Times New Roman", FontWeight.SEMI_BOLD, 2));
         simpan.setFont(Font.font("Quicksand", 14));
@@ -71,22 +63,22 @@ public class Scene4 {
             Boolean uji2 = DbConnect.saveToDatabase(Saldo);
             if (uji){
                 if (uji2){
-                    showAlert("sukses menginput data");
+                    showAlert("Sukses menginput data");
                     return;
                 }
             }
             else if (uji) {
-                showAlert("sukses menginput data");
+                showAlert("Sukses menginput data");
                 return;
                 }
             else {
-                showAlert("gagal menginput data");
+                showAlert("Gagal menginput data");
                 return;
             }
         });
 
         batal.setOnAction(v -> {
-            stage.setScene(Scene3.getScene3(stage));
+            stage.setScene(SceneMenu.getSceneMenu(stage));
         });
 
         GridPane Data = new GridPane();
@@ -115,18 +107,14 @@ public class Scene4 {
     
         Data.setHgap(10); 
         Data.setVgap(10);
-        //Data.setStyle("-fx-font: 18 times new roman;");
         Data.setAlignment(Pos.CENTER);
 
 
         VBox root  = new VBox();
         root.getChildren().addAll(catat, Data);
         root.setAlignment(Pos.CENTER);
-        root.setStyle(" -fx-spacing: 30px; -fx-alignment: center;");
+        root.setStyle("-fx-spacing: 30px; -fx-alignment: center;");
         
-        // VBox vb2 = new VBox(simpan,batal);
-        // vb2.setAlignment(Pos.CENTER_LEFT);
-        // vb2.setSpacing(10);
 
         VBox vbox4 = new VBox(root);
         vbox4.setPadding(new Insets(20, 30, 20, 30));

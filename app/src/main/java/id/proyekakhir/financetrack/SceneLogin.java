@@ -1,6 +1,6 @@
 package id.proyekakhir.financetrack;
 
-import config.DbConnect;
+import id.proyekakhir.config.DbConnect;
 import java.io.FileNotFoundException;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -21,10 +21,10 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 
-public class Scene2  {
+public class SceneLogin {
     private static Scene scene;
 
-    public static Scene getScene2(Stage stage){
+    public static Scene getSceneLogin(Stage stage){
         Text hlmLogin = new Text("Halaman Login");
         Button login = new Button("LOGIN");
         Button back = new Button("BACK");
@@ -63,7 +63,7 @@ public class Scene2  {
             String password = txtPassword.getText();
             Boolean uji = DbConnect.validasi(username, password);
             if (uji){
-                stage.setScene(Scene3.getScene3(stage));
+                stage.setScene(SceneMenu.getSceneMenu(stage));
             }
             else{
                 output.setText("password or username invalid");
@@ -72,7 +72,7 @@ public class Scene2  {
         
         back.setOnAction(v -> {
             try {
-                stage.setScene(Scene1.getScene1(null));
+                stage.setScene(SceneStart.getSceneStart(null));
             } catch (FileNotFoundException e) {
                 // TODO Auto-generated catch block
                 e.printStackTrace();

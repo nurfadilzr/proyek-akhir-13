@@ -16,8 +16,8 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 
-public class Scene3 {
-    public static Scene getScene3(Stage stage){
+public class SceneMenu {
+    public static Scene getSceneMenu(Stage stage){
         Text pilihMenu = new Text("PILIH MENU");
         Button catat = new Button("Catat Pengeluaran");
         Button lihat = new Button("Lihat Pengeluaran");
@@ -47,17 +47,17 @@ public class Scene3 {
         logout.setCursor(Cursor.HAND);
 
         catat.setOnAction(v -> {
-            stage.setScene(Scene4.getScene4(stage)); 
+            stage.setScene(SceneCatat.getSceneCatat(stage)); 
         });
         lihat.setOnAction(v -> {
-            Scene5 scene = new Scene5();
-            stage.setScene(scene.getScene5(stage)); 
+            SceneLihat scene = new SceneLihat();
+            stage.setScene(scene.getSceneLihat(stage)); 
         });
         artikel.setOnAction(v -> {
-            stage.setScene(Scene6.getScene6(stage)); 
+            stage.setScene(SceneTips.getSceneTips(stage)); 
         });
         logout.setOnAction(v -> {
-            stage.setScene(Scene2.getScene2(stage)); 
+            stage.setScene(SceneLogin.getSceneLogin(stage)); 
         });
 
         VBox vb = new VBox(pilihMenu, catat, lihat, artikel);

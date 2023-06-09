@@ -1,4 +1,4 @@
-package config;
+package id.proyekakhir.config;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -14,6 +14,8 @@ import javafx.scene.control.TableColumn;
 
 public class DbConnect {
     private static final String DB_URL = "jdbc:sqlite:/db/dbUser.db";
+    private static final String DB_USER = "root";
+    private static final String DB_PASSWORD = "password";
     private static Connection connection;
     private static PreparedStatement preparedStatement;
     private static ResultSet resultSet;
@@ -21,7 +23,7 @@ public class DbConnect {
     
     public static void connection(){    
         try {
-            connection = DriverManager.getConnection(DB_URL);
+            connection = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD);
             System.out.println("connected");
         } catch (SQLException e) {
             e.printStackTrace();
@@ -96,7 +98,7 @@ public class DbConnect {
     public static boolean checkSaldoIsNull() {
         Boolean uji = false ;
         try (Connection connection = DriverManager.getConnection(DB_URL);
-             PreparedStatement stmt = connection.prepareStatement("SELECT * FROM user WHERE saldo IS NULL")) {
+            PreparedStatement stmt = connection.prepareStatement("SELECT * FROM user WHERE saldo IS NULL")) {
             ResultSet rs = stmt.executeQuery();
             if(rs.next()){
                 uji = true;
@@ -111,7 +113,7 @@ public class DbConnect {
     public static boolean checkUsernameIsNull() {
         Boolean uji = false ;
         try (Connection connection = DriverManager.getConnection(DB_URL);
-             PreparedStatement stmt = connection.prepareStatement("SELECT * FROM user WHERE user_name IS NULL")) {
+            PreparedStatement stmt = connection.prepareStatement("SELECT * FROM user WHERE user_name IS NULL")) {
             ResultSet rs = stmt.executeQuery();
             if(rs.next()){
                 uji = true;
@@ -138,7 +140,7 @@ public class DbConnect {
     
             // Menambahkan kolom ke dalam TableView
             for (int i = 1; i <= columnCount; i++) {
-                int columnIndex = i;
+                int columnIndex = i;    
                 String columnName = metaData.getColumnName(columnIndex);
                 TableColumn<Object[], Object> column = new TableColumn<>(columnName);
                 column.setCellValueFactory(cellData -> {

@@ -1,6 +1,6 @@
 package id.proyekakhir.financetrack;
 
-import config.DbConnect;
+import id.proyekakhir.config.DbConnect;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.stage.Stage;
@@ -19,11 +19,11 @@ import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 
 
-public class Scene5 {
+public class SceneLihat {
 
     private TableView<Object[]> tableView;
 
-    public Scene getScene5(Stage stage){
+    public Scene getSceneLihat(Stage stage){
         Text lihat = new Text("Lihat Pengeluaran");
         Button back = new Button("BACK");
 
@@ -35,7 +35,7 @@ public class Scene5 {
         back.setCursor(Cursor.HAND);
 
         back.setOnAction(v -> {
-            stage.setScene(Scene3.getScene3(stage));
+            stage.setScene(SceneMenu.getSceneMenu(stage));
         });
 
         VBox vbox5 = new VBox(lihat, tableView, back);

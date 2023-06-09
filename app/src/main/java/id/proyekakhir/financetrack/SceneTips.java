@@ -18,9 +18,9 @@ import javafx.scene.text.Text;
 import javafx.scene.text.TextAlignment;
 
 
-public class Scene6 {
+public class SceneTips {
 
-    public static Scene getScene6(Stage stage){
+    public static Scene getSceneTips(Stage stage){
         Text artikel = new Text("Tips");
         Button back = new Button("BACK");
 
@@ -48,7 +48,7 @@ public class Scene6 {
         back.setCursor(Cursor.HAND);
 
         back.setOnAction(v -> {
-            stage.setScene(Scene3.getScene3(stage));
+            stage.setScene(SceneMenu.getSceneMenu(stage));
         });
        
         VBox vbox6 = new VBox(artikel, isi, back);

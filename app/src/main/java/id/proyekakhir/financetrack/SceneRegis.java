@@ -6,7 +6,7 @@ import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 import java.util.regex.Pattern;
-import config.DbConnect;
+import id.proyekakhir.config.DbConnect;
 
 public class SceneRegis {
     // Regular expression patterns for username and password validation
@@ -64,7 +64,7 @@ public class SceneRegis {
         });
 
         back.setOnAction(event -> {
-            Stage.setScene(Scene2.getScene2(Stage));
+            Stage.setScene(SceneLogin.getSceneLogin(Stage));
         });
 
         Scene scene = new Scene(gridPane, 450, 650);
